@@ -74,6 +74,7 @@ inputs[3].addEventListener("input",validatepassword);
 
 
 bookMarkForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     
     validateSiteName();
     validateSiteURL();
