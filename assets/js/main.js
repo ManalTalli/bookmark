@@ -21,6 +21,7 @@ const validateSiteName = () => {
 }
 inputs[0].addEventListener("input",validateSiteName);
 
+
 const validateSiteURL = () => {
     const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
     if (!regex.test(inputs[1].value)) {
@@ -38,6 +39,7 @@ const validateSiteURL = () => {
 }
 inputs[1].addEventListener("input",validateSiteURL);
 
+
 const validateEmail= () => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!regex.test(inputs[2].value)) {
@@ -54,6 +56,7 @@ const validateEmail= () => {
     }
 }
 inputs[2].addEventListener("input",validateEmail);
+
 
 const validatepassword = () => {
     const regex = /^.{8,}$/;
@@ -74,7 +77,6 @@ inputs[3].addEventListener("input",validatepassword);
 
 
 bookMarkForm.addEventListener("submit", (e) => {
-    e.preventDefault();
     
     validateSiteName();
     validateSiteURL();
@@ -106,9 +108,6 @@ const displaySites = () => {
     document.querySelector(".sitesData").innerHTML = result;
 }
 
-displaySites();
-
-
 
 deleteAllBtn.addEventListener("click", () => {
     localStorage.removeItem(sites);
@@ -116,3 +115,5 @@ deleteAllBtn.addEventListener("click", () => {
     displaySites();
 }
 );
+
+displaySites();
